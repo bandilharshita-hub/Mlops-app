@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 # 1. AWS S3 Client Setup
 s3 = boto3.client("s3")
-BUCKET = "mlops-house-prediction-274"
+BUCKET = "mlops-house-prediction57"
 
 # Exact S3 Key Path
 KEY = "processed/2026-09-25/Mlops_house_predication_cleaned_v1.csv"
@@ -32,7 +32,7 @@ y = df["price"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 3. MLflow Tracking & Experiment Setup
-mlflow.set_tracking_uri("http://3.108.73.186:5000")
+mlflow.set_tracking_uri("http://3.109.101.91:5000")
 mlflow.set_experiment("mlops-house-prediction")
 
 with mlflow.start_run():
